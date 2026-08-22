@@ -1,23 +1,23 @@
-import {filterCountries } from "../countries/countries"
+import {filterCountries} from "../countries/countries"
 import { useState } from "react";
+import CountryDropdown from "./CountryDropdown";
 function CountrySelect(){
     const [searchValue, setSearchValue] = useState("");
     
     return(
         <div>
             <input value={searchValue}     
-            onChange={(event) => {setSearchValue(event.target.value); DisplayCountries(event.target.value)}}>
+            onChange={(event) => {setSearchValue(event.target.value)}}>
             </input>
+            
+            {searchValue !== "" && (<CountryDropdown countries={getDisplayedCountries(searchValue)}/>)}
         </div>
     )
 }
 
-function DisplayCountries(key: string){
-    console.clear()
-
+function getDisplayedCountries(key: string){
     const countries = filterCountries(key);
-
-    console.log(countries.map(country => country.name))
+    return countries.slice(0, 5)
 }
 
 export default CountrySelect

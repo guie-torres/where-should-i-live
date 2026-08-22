@@ -250,7 +250,7 @@ const countries = [
   { code: "ZW", name: "Zimbabwe" },
 ];
 
-export function filterCountries(key: string) {
+export function filterCountries(key: string){
     const filteredCountries = countries.filter(country =>
         country.name.toLowerCase().startsWith(key.toLowerCase())
     );
@@ -258,4 +258,8 @@ export function filterCountries(key: string) {
     return filteredCountries;
 }
 
-export default countries 
+export default countries
+export type Country = {
+    code: string,
+    name: string
+}
