@@ -1,3 +1,5 @@
+import Fuse from "fuse.js";
+
 const countries = [
   { code: "AF", name: "Afghanistan" },
   { code: "AX", name: "\u00c5land Islands" },
@@ -250,12 +252,17 @@ const countries = [
   { code: "ZW", name: "Zimbabwe" },
 ];
 
-export function filterCountries(key: string){
-    const filteredCountries = countries.filter(country =>
-        country.name.toLowerCase().startsWith(key.toLowerCase())
-    );
+const fuse = new Fuse(countries, {
+    keys: ["name"],
+    threshold: 0.3
+});
 
-    return filteredCountries;
+export function filterCountries(key: string){
+        const results = fuse.search(key);
+
+    return results
+        .slice(0, 5)
+        .map(result => result.item);
 }
 
 export default countries
