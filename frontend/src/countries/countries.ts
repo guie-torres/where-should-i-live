@@ -1,4 +1,4 @@
-export default [
+const countries = [
   { code: "AF", name: "Afghanistan" },
   { code: "AX", name: "\u00c5land Islands" },
   { code: "AL", name: "Albania" },
@@ -249,3 +249,13 @@ export default [
   { code: "ZM", name: "Zambia" },
   { code: "ZW", name: "Zimbabwe" },
 ];
+
+export function filterCountries(key: string) {
+    const filteredCountries = countries.filter(country =>
+        country.name.toLowerCase().startsWith(key.toLowerCase())
+    );
+
+    return filteredCountries;
+}
+
+export default countries 
