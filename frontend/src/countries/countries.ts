@@ -260,9 +260,7 @@ const fuse = new Fuse(countries, {
 export function filterCountries(key: string){
         const results = fuse.search(key);
 
-    return results
-        .slice(0, 5)
-        .map(result => result.item);
+    return results.map(result => result.item);
 }
 
 export default countries
