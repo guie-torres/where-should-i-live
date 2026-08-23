@@ -1,0 +1,34 @@
+.countries {
+  display: flex;
+  flex-direction: column;
+  align-items: center; 
+}
+
+.country-button {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: 220px; 
+  height: 44px;
+  background: #7C98B3;
+  color: black;
+  border: 1px solid #637081;
+  font-size: 16px;
+  cursor: pointer;
+  padding: 0 16px;
+}
+
+.country-flag {
+  width: 45px;
+  height: 30px;
+  object-fit: contain;
+  flex-shrink: 0;
+}
+
+.country-input{
+  width: 220px; 
+  height: 44px;
+  background: #ACCBE1;
+  border: 1px solid #637081;
+  color: black;
+}

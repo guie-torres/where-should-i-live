@@ -1,12 +1,14 @@
 import {filterCountries} from "../countries/countries"
 import { useState } from "react";
 import CountryDropdown from "./CountryDropdown";
+import "./CountrySelect.css"
+
 function CountrySelect(){
     const [searchValue, setSearchValue] = useState("");
     
     return(
         <div>
-            <input value={searchValue}     
+            <input className="country-input" value={searchValue}     
             onChange={(event) => {setSearchValue(event.target.value)}}>
             </input>
             

@@ -1,5 +1,5 @@
 import type { Country } from "../countries/countries";
-import "./CountryDropdown.css"
+import "./CountrySelect.css"
 
 const flagUrls = import.meta.glob("../countries/flags/*.svg", {
     eager: true,
@@ -20,7 +20,7 @@ const countryComponents = countries.map(country => (
 ));
     
     return(
-        <div>
+        <div className="countries">
             {countryComponents}
         </div>
     )
@@ -30,10 +30,10 @@ function CountryDropdownItem({ country }: { country: {code: string, name: string
     const flag = flagUrls[`../countries/flags/${country.code.toLowerCase()}.svg`];
 
     return(
-        <div className="country-option">
-            <img className="country-flag" src={flag} alt={country.code}/>
-            <button>{country.name}</button>
-        </div>
+        <button className="country-button">
+        <img className="country-flag" src={flag} alt={country.code} />
+        <span>{country.name}</span>
+        </button>
     )
 }
 
