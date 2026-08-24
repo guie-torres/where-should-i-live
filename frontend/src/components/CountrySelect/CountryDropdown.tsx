@@ -1,7 +1,7 @@
-import type { Country } from "../countries/countries";
+import type { Country } from "../../countries/countries";
 import "./CountrySelect.css"
 
-const flagUrls = import.meta.glob("../countries/flags/*.svg", {
+const flagUrls = import.meta.glob("../../countries/flags/*.svg", {
     eager: true,
     query: "?url",
     import: "default",
@@ -27,7 +27,7 @@ const countryComponents = countries.map(country => (
 }
 
 function CountryDropdownItem({ country }: { country: {code: string, name: string} }){
-    const flag = flagUrls[`../countries/flags/${country.code.toLowerCase()}.svg`];
+    const flag = flagUrls[`../../countries/flags/${country.code.toLowerCase()}.svg`];
 
     return(
         <button className="country-button">

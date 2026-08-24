@@ -1,4 +1,4 @@
-import {filterCountries} from "../countries/countries"
+import {filterCountries} from "../../countries/countries"
 import { useState } from "react";
 import CountryDropdown from "./CountryDropdown";
 import "./CountrySelect.css"
