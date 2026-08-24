@@ -1,9 +1,9 @@
-import {filterCountries} from "../../countries/countries"
+import {filterCountries, type Country} from "../../countries/countries"
 import { useState } from "react";
 import CountryDropdown from "./CountryDropdown";
 import "./CountrySelect.css"
 
-function CountrySelect(){
+function CountrySelect({setHomeCountry}: {setHomeCountry: (country: Country) => void}){
     const [searchValue, setSearchValue] = useState("");
     
     return(
@@ -12,7 +12,7 @@ function CountrySelect(){
             onChange={(event) => {setSearchValue(event.target.value)}}>
             </input>
             
-            {searchValue !== "" && (<CountryDropdown countries={getDisplayedCountries(searchValue)}/>)}
+            {searchValue !== "" && (<CountryDropdown countries={getDisplayedCountries(searchValue)} setHomeCountry={setHomeCountry}/>)}
         </div>
     )
 }
