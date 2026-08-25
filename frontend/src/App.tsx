@@ -6,7 +6,7 @@ function App() {
 const [homeCountry, setHomeCountry] = useState<Country | null>(null);
   return(
     <div>
-    {homeCountry == null ? <HomeCountrySelect setHomeCountry={setHomeCountry}/> : <Selection homeCountry={homeCountry}/>}
+    {homeCountry == null ? <HomeCountrySelect setHomeCountry={setHomeCountry}/> : <Selection homeCountry={homeCountry} setHomeCountry={setHomeCountry}/>}
     </div>
   )
 }

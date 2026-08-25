@@ -1,0 +1,20 @@
+.home-country-image{
+        width: 75px;
+        height: 50px;
+        object-fit: contain;
+        flex-shrink: 0;
+}
+
+.home-country-button{
+      border: none;
+      background: none;
+      padding: 0;
+      cursor: pointer;
+      margin: 0px;
+}
+
+.home-country{
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+}
