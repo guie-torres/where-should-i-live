@@ -4,9 +4,13 @@ import Selection from './pages/Selection/Selection';
 import type { Country } from './countries/countries';
 function App() {
 const [homeCountry, setHomeCountry] = useState<Country | null>(null);
+const [preferedCountry, setPreferedCountry] = useState<Country | null>(null);
   return(
     <div>
-    {homeCountry == null ? <HomeCountrySelect setHomeCountry={setHomeCountry}/> : <Selection homeCountry={homeCountry} setHomeCountry={setHomeCountry}/>}
+    {homeCountry == null ? 
+    <HomeCountrySelect setHomeCountry={setHomeCountry}/> 
+    : 
+    <Selection homeCountry={homeCountry} setHomeCountry={setHomeCountry} preferedCountry={preferedCountry} setPreferedCountry={setPreferedCountry}/>}
     </div>
   )
 }

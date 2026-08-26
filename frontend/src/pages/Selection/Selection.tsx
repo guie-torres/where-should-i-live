@@ -7,7 +7,7 @@ const flagsURL = import.meta.glob("../../countries/flags/*.svg",{
     import: "default"
 }) as Record<string, string>;
 
-function Selection({homeCountry, setHomeCountry}: {homeCountry: Country, setHomeCountry: (country: Country | null) => void}){
+function Selection({homeCountry, setHomeCountry, preferedCountry, setPreferedCountry}: {homeCountry: Country, setHomeCountry: (country: Country | null) => void, preferedCountry: Country|null, setPreferedCountry: (country: Country | null) => void}){
     const flag = flagsURL[`../../countries/flags/${homeCountry.code.toLowerCase()}.svg`];
     return(
         <div>
@@ -17,7 +17,8 @@ function Selection({homeCountry, setHomeCountry}: {homeCountry: Country, setHome
             </button>
         </div>
 
-        <PreferedCountrySelect/>
+        <PreferedCountrySelect setPreferedCountry={setPreferedCountry}/>
+        <h1>{preferedCountry?.name}</h1>
         </div>
     )
 
