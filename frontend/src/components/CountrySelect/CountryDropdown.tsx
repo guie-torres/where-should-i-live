@@ -8,7 +8,7 @@ const flagUrls = import.meta.glob("../../countries/flags/*.svg", {
 }) as Record<string, string>;
 
 function CountryDropdown(
-    { countries, setHomeCountry }: { countries: Country[], setHomeCountry: (country: Country) => void }
+    { countries, setCountry }: { countries: Country[], setCountry: (country: Country) => void }
 ) {
 
 
@@ -16,7 +16,7 @@ const countryComponents = countries.map(country => (
     <CountryDropdownItem
         key={country.code}
         country={country}
-        setHomeCountry={setHomeCountry}
+        setCountry={setCountry}
     />
 ));
     
@@ -27,11 +27,11 @@ const countryComponents = countries.map(country => (
     )
 }
 
-function CountryDropdownItem({ country, setHomeCountry }: { country: Country, setHomeCountry: (country: Country) => void}){
+function CountryDropdownItem({ country, setCountry }: { country: Country, setCountry: (country: Country) => void}){
     const flag = flagUrls[`../../countries/flags/${country.code.toLowerCase()}.svg`];
 
     return(
-        <button className="country-button" onClick={()=>setHomeCountry(country)}>
+        <button className="country-button" onClick={()=>setCountry(country)}>
         <img className="country-flag" src={flag} alt={country.code} />
         <span>{country.name}</span>
         </button>

@@ -3,7 +3,7 @@ import { useState } from "react";
 import CountryDropdown from "./CountryDropdown";
 import "./CountrySelect.css"
 
-function CountrySelect({setHomeCountry}: {setHomeCountry: (country: Country) => void}){
+function CountrySelect({setCountry}: {setCountry: (country: Country) => void}){
     const [searchValue, setSearchValue] = useState("");
     
     return(
@@ -12,7 +12,7 @@ function CountrySelect({setHomeCountry}: {setHomeCountry: (country: Country) => 
             onChange={(event) => {setSearchValue(event.target.value)}}>
             </input>
             
-            {searchValue !== "" && (<CountryDropdown countries={getDisplayedCountries(searchValue)} setHomeCountry={setHomeCountry}/>)}
+            {searchValue !== "" && (<CountryDropdown countries={getDisplayedCountries(searchValue)} setCountry={setCountry}/>)}
         </div>
     )
 }

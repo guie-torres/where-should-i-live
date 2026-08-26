@@ -6,7 +6,7 @@ function HomeCountrySelect({setHomeCountry}: {setHomeCountry: (country: Country)
     return(
         <div>
         <h1>WHERE DO YOU COME FROM?</h1>
-        <CountrySelect setHomeCountry={setHomeCountry}/>
+        <CountrySelect setCountry={setHomeCountry}/>
         </div>
     )
 }
