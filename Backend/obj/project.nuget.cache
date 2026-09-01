@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "1aaRNhXajO0=",
+  "dgSpecHash": "NRD/aBLnT9Y=",
   "success": true,
-  "projectFilePath": "C:\\Users\\guill\\OneDrive\\Dokumenty\\GitHub\\where-should-i-live\\Backend\\Backend.csproj",
+  "projectFilePath": "C:\\Users\\guill\\OneDrive\\Dokumenty\\GitHub\\where-should-i-live\\backend\\Backend.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\guill\\.nuget\\packages\\microsoft.aspnetcore.openapi\\8.0.30\\microsoft.aspnetcore.openapi.8.0.30.nupkg.sha512",
     "C:\\Users\\guill\\.nuget\\packages\\microsoft.extensions.apidescription.server\\6.0.5\\microsoft.extensions.apidescription.server.6.0.5.nupkg.sha512",
