@@ -16,8 +16,6 @@ function Selection({homeCountry, setHomeCountry, preferedCountry, setPreferedCou
                 <img className="home-country-image" src={flag} alt={homeCountry.code}></img>
             </button>
         </div>
-
-        <PreferedCountrySelect setPreferedCountry={setPreferedCountry}/>
         <h1>{preferedCountry?.name}</h1>
         </div>
     )
